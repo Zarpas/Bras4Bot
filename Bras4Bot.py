@@ -74,7 +74,7 @@ def error(bot, update, error):
 def main():
     
     # Create the EventHandler and pass it your bot's token.
-    updater = Updater("242965358:AAEOLA42JkopfEvPwH-0gJrgr3cSMJcaMlA") # Bras4Bot
+    updater = Updater("bot-token") # Bras4Bot
 
     # Get the dispatcher to register handlers
     dp = updater.dispatcher
