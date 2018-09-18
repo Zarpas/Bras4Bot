@@ -4,7 +4,7 @@
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 from signal import signal, SIGINT, SIGTERM, SIGABRT
 import logging
-from os import scandir, getcwd
+from os import scandir, getcwd, path
 import pygame
 from time import sleep
 
@@ -19,7 +19,9 @@ SONG_END = pygame.USEREVENT + 1
 
 pygame.mixer.init()
 
-ruta = '/home/zarpas/Bras4Bot/files/' # corregir con os.path
+ruta = path.join(
+    path.dirname(__file__),
+    'files')
 
 def ls(ruta = getcwd()):
 	return [arch.name for arch in scandir(ruta) if arch.is_file()]
