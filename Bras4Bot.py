@@ -55,7 +55,7 @@ def list(bot, update):
 def play(bot, update, args):
     archivos = ls(ruta)
     archivo = os.path.join(ruta, archivos[int(args[0])-1])
-    update.message.reply_text('Reproduciendo: ' + archivos[int(args[0])-1])
+    update.message.reply_text('Reproduciendo: {}'.format(archivos[int(args[0])-1]))
     pygame.mixer.music.set_endevent( SONG_END)
     pygame.mixer.music.load(archivo)
     pygame.mixer.music.play()
